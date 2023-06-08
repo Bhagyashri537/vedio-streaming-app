@@ -10,7 +10,7 @@ const VideoCard = ({info}) => {
             <ul>
                 <li className="font-bold">{title}</li>
                 <li>{channelTitle}</li>
-                <li>{statistics.viewCount}</li>
+                <li className="font-medium">Views {statistics.viewCount}K</li>
             </ul>
         </div>
     )

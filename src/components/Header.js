@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { YOUTUBE_SEARCH_API } from "../utils/config";
 import { hamburger_url, userIconIrl, youtubeUrl } from "../utils/imgurl";
 import { toggleAction } from "../utils/menuSlice";
+import { GoSearch } from "react-icons/go"
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -30,15 +31,15 @@ const Header = () => {
     dispatch(toggleAction.toggleMenu());
   };
   return (
-    <div className="grid grid-flow-col p-5 m-2 shadow-lg">
+    <div className="grid grid-flow-col p-5 m-2 shadow-lg ">
       <div className="flex col-span-2 ">
         <img
-          className="h-14 cursor-pointer"
+          className="h-10 cursor-pointer"
           src={hamburger_url}
           alt="logo"
           onClick={() => toggleMenuHandler()}
         />
-        <img className="h-14 mx-3" src={youtubeUrl} alt="/" />
+        <img className="h-12 mx-3" src={youtubeUrl} alt="/" />
       </div>
       <div className="col-span-10 px-10">
         <input
@@ -50,8 +51,8 @@ const Header = () => {
           onFocus={() => setShowSuggestion(true)}
           onBlur={() => setShowSuggestion(false)}
         />
-        <button className="border border-slate-500 rounded-r-full p-1">
-          search
+        <button className="border-2 border-slate-500 rounded-r-full p-2 px-3 items-center">
+        <GoSearch />
         </button>
         {showSuggestion && (
           <div className="fixed bg-white pt-8 px-5 py-2 w-[37rem] shadow-lg rounded-lg ">
